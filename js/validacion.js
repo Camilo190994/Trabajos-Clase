@@ -13,7 +13,7 @@ document.getElementById('regBtn').addEventListener('click', function(event) { //
     const name = nameInput.value
     const lastnameInput = document.getElementById('apellido')
     const lastname = lastnameInput.value
-
+    const terminos = document.getElementById('terminos').checked;
     //seteamos un array que va a guardar el elemento y el mensaje de error
     const errors = []; 
 
@@ -54,8 +54,12 @@ document.getElementById('regBtn').addEventListener('click', function(event) { //
         return; 
     }
 
+    if(!terminos){
+        showAlertError();
+    }else{
+         showAlertSuccess();   
+    }
 
-    showAlertSuccess();
 });
 
 function emailValidation(email) {
